@@ -1,0 +1,12 @@
+# requirements.txt
+fastapi
+uvicorn[standard]
+influxdb-client
+redis
+websockets
+pydantic
+pydantic-settings
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+aiofiles

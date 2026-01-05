@@ -1,0 +1,33 @@
+
+# Root level ignores
+
+.DS_Store
+
+.env
+
+.env.local
+
+.env.*.local
+
+*.log
+
+*.swp
+
+*.swo
+
+*~
+
+# IDE
+
+.vscode/
+
+.idea/
+
+*.iml
+
+.fleet/
+
+# OS
+
+Thumbs.db
+

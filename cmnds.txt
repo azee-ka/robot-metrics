@@ -1,0 +1,21 @@
+cd ~/Downloads/robot-metrics/backend
+docker-compose up -d
+python -m uvicorn app.main:app --reload --port 8000
+
+cd ~/Downloads/robot-metrics/rust-agent
+RUST_LOG=info ROBOT_ID=robot_001 WAREHOUSE_ID=warehouse_A BACKEND_ADDR=127.0.0.1:8000 cargo run --release
+
+
+cd ~/Downloads/robot-metrics/rust-agent
+RUST_LOG=info ROBOT_ID=robot_002 WAREHOUSE_ID=warehouse_A BACKEND_ADDR=127.0.0.1:8000 cargo run --release
+
+
+cd ~/Downloads/robot-metrics/rust-agent
+RUST_LOG=info ROBOT_ID=robot_003 WAREHOUSE_ID=warehouse_B BACKEND_ADDR=127.0.0.1:8000 cargo run --release
+
+cd ~/Downloads/robot-metrics/rust-agent
+RUST_LOG=info ROBOT_ID=robot_004 WAREHOUSE_ID=warehouse_A BACKEND_ADDR=127.0.0.1:8000 cargo run --release
+
+
+cd ~/Downloads/robot-metrics/frontend
+npm run dev
